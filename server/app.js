@@ -14,7 +14,8 @@ const app = express();
 // so long as they are prefaced with our app variable.
 
 // **** routes will go here **** //
-const songRouters = require('./routes/songs');
+const songRouter = require('./routes/songs');
+const userRouter = require('./routes/users.js');
 
 app.use(morgan('dev'));
 // Calls our middleware function .use(),
@@ -27,7 +28,8 @@ app.use(express.json());
 // This will give us access to all of the functions
 // and methods that are built into the Express library,
 // so long as they are prefaced with our app variable
-app.use('/api/songs', songRouters);
+app.use('/api/songs', songRouter);
+app.use('api/users', userRouter);
 
 module.exports = app;
 

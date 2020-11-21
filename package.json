@@ -2,6 +2,7 @@
   "name": "moodsic",
   "version": "1.0.0",
   "main": "server.js",
+  "author": "Katie Breuil",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",

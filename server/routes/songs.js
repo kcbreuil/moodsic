@@ -4,7 +4,7 @@ const {
   getSongs,
   deleteSong,
   getSingleSong
-} = require('../controllers/song');
+} = require('../controllers/songs');
 
 router.get('/', getSongs);
 
