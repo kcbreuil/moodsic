@@ -29,7 +29,7 @@ app.use(express.json());
 // and methods that are built into the Express library,
 // so long as they are prefaced with our app variable
 app.use('/api/songs', songRouter);
-app.use('api/users', userRouter);
+app.use('/api/users', userRouter);
 
 module.exports = app;
 

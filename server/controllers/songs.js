@@ -15,6 +15,7 @@ const makeSong = async (req, res) => {
       runtime,
       youtubeUrl
     });
+    await song.save();
     res.status(201).json(song);
   } catch (err) {
     console.log(err.toString());
