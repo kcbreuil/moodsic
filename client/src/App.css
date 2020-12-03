@@ -1,3 +1,17 @@
-* {
-  color: black;
+.form-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+.center {
+  text-align: center;
+}
+
+.card {
+  display: flex;
+}
+
+.music-container {
+  display: flex;
 }

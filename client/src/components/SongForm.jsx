@@ -1,20 +1,9 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext.jsx';
 import { Container, Form, Button } from 'react-bootstrap';
-import styled from 'styled-components';
 import axios from 'axios';
 import swal from 'sweetalert';
-
-const FormStyle = styled.div`
-  button {
-    border-radius: 3px;
-    background-color: black;
-    color: white;
-  }
-  div {
-    max-width: 500px;
-  }
-`;
+import '../App.css';
 
 const SongForm = () => {
   const { setSongs } = useContext(AppContext);
@@ -41,9 +30,8 @@ const SongForm = () => {
   };
 
   return (
-    // <FormStyle>
-    <Container>
-      <Form onSubmit={submitForm}>
+    <Container className="form-container">
+      <Form onSubmit={submitForm} border="primary" style={{ width: '25rem' }}>
         <Form.Group>
           <Form.Label>Title</Form.Label>
           <Form.Control
@@ -51,6 +39,7 @@ const SongForm = () => {
             name="title"
             placeholder="Song Title"
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group>
@@ -60,6 +49,7 @@ const SongForm = () => {
             name="artist"
             placeholder="Artist"
             onChange={handleChange}
+            required
           />
         </Form.Group>
         <Form.Group>
@@ -85,7 +75,6 @@ const SongForm = () => {
         </Form.Group>
       </Form>
     </Container>
-    // </FormStyle>
   );
 };
 

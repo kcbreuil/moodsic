@@ -43,12 +43,12 @@ const getUsers = (req, res) => {
 };
 
 const loginUser = async (req, res) => {
+  const { email, password } = req.body;
+  console.log(email);
+  console.log(password);
   try {
-    const user = await User.findByCredentials(
-      req.body.email,
-      req.body.password
-    );
-    res.send(user);
+    const user = await User.findByCredentials(email, password);
+    res.json(user);
   } catch (e) {
     res.status(400).send(e.toString());
   }
