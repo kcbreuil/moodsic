@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
+  background-color: white;
+  height: 80px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px;
+  a {
+    color: black;
+  }
   ul {
     text-align: center;
     list-style: none;
@@ -11,30 +18,30 @@ const NavStyles = styled.nav`
     grid-gap: 2rem;
     align-items: center;
     font-family: 'Fredoka One', cursive;
-    font-size: 24px;
+    margin-top: 0;
+  }
+  li {
+    margin-top: 20px;
+    font-size: 2rem;
   }
   a:link {
     text-decoration: none;
-    color: black;
   }
   a:hover {
-    font-size: 28px;
-    color: #f0f8ff;
+    color: red;
+    --rotate: -2deg;
+    transform: rotate(var(--rotate));
   }
 `;
 const Navigation = () => {
   return (
     <NavStyles>
       <ul>
+        <li>{/* <Link to="/">MoodsicApp</Link> */}</li>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/">MoodsicApp</Link>
         </li>
-        <li>
-          <Link to="/">Moodsic</Link>
-        </li>
-        <li>
-          <Link to="/profile">Profile</Link>
-        </li>
+        <li>{/* <Link to="/">MoodsicApp</Link> */}</li>
       </ul>
     </NavStyles>
   );

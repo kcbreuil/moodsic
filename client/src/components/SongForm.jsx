@@ -1,24 +1,18 @@
 import React, { useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext.jsx';
+import { Container, Form, Button } from 'react-bootstrap';
 import styled from 'styled-components';
 import axios from 'axios';
 import swal from 'sweetalert';
 
 const FormStyle = styled.div`
-  form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-  }
-  input {
-    padding: 0.5em;
-    margin: 0.5em;
-    border-radius: 3px;
-  }
   button {
     border-radius: 3px;
+    background-color: black;
+    color: white;
+  }
+  div {
+    max-width: 500px;
   }
 `;
 
@@ -47,47 +41,51 @@ const SongForm = () => {
   };
 
   return (
-    <FormStyle>
-      <form onSubmit={submitForm}>
-        <label>
-          Title:
-          <input
+    // <FormStyle>
+    <Container>
+      <Form onSubmit={submitForm}>
+        <Form.Group>
+          <Form.Label>Title</Form.Label>
+          <Form.Control
             type="text"
             name="title"
-            placeholder="Song Titles"
+            placeholder="Song Title"
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Artist:
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Artist</Form.Label>
+          <Form.Control
             type="text"
             name="artist"
             placeholder="Artist"
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Runtime:
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Runtime</Form.Label>
+          <Form.Control
             type="number"
             name="runtime"
             placeholder="Runtime"
             onChange={handleChange}
           />
-        </label>
-        <label>
-          Youtube Link:
-          <input
+        </Form.Group>
+        <Form.Group>
+          <Form.Label>Youtube Link</Form.Label>
+          <Form.Control
             type="url"
             name="youtubeUrl"
-            placeholder="Youtube URL"
+            placeholder="https://www.youtube.com/"
             onChange={handleChange}
           />
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </FormStyle>
+        </Form.Group>
+        <Form.Group>
+          <Button type="submit">Submit</Button>
+        </Form.Group>
+      </Form>
+    </Container>
+    // </FormStyle>
   );
 };
 

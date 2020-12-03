@@ -42,4 +42,16 @@ const getUsers = (req, res) => {
     .catch((err) => res.status(500).json('Error: ' + err));
 };
 
-module.exports = { createUser, deleteUser, getUsers, updateUser };
+const loginUser = async (req, res) => {
+  try {
+    const user = await User.findByCredentials(
+      req.body.email,
+      req.body.password
+    );
+    res.send(user);
+  } catch (e) {
+    res.status(400).send(e.toString());
+  }
+};
+
+module.exports = { createUser, deleteUser, getUsers, updateUser, loginUser };
