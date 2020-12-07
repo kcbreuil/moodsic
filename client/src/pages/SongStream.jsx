@@ -1,15 +1,13 @@
-import React from 'react';
-import Navigation from '../components/Navigation';
-import SongList from '../components/SongList';
-import '../App.css';
+import React from "react";
+import Navigation from "../components/Navigation";
+import SongList from "../components/SongList";
+import "../App.css";
 
 const Profile = () => {
   return (
-    <div>
+    <div style={{ marginBottom: "3rem" }}>
       <Navigation />
-      <h3 style={{ textAlign: 'center', marginBottom: '50px' }}>
-        Check out the songs from our users!
-      </h3>
+      <h2 className="center">Check out the songs from our users!</h2>
       <SongList />
     </div>
   );

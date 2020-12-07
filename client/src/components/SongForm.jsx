@@ -1,9 +1,9 @@
-import React, { useState, useContext } from 'react';
-import { AppContext } from '../context/AppContext.jsx';
-import { Container, Form, Button } from 'react-bootstrap';
-import axios from 'axios';
-import swal from 'sweetalert';
-import '../App.css';
+import React, { useState, useContext } from "react";
+import { AppContext } from "../context/AppContext.jsx";
+import { Container, Form, Button } from "react-bootstrap";
+import axios from "axios";
+import swal from "sweetalert";
+import "../App.css";
 
 const SongForm = () => {
   const { setSongs } = useContext(AppContext);
@@ -18,11 +18,11 @@ const SongForm = () => {
     e.preventDefault();
     try {
       await axios({
-        method: 'POST',
-        url: '/api/songs',
-        data: formData
+        method: "POST",
+        url: "/api/songs",
+        data: formData,
       });
-      swal('New song added to Moodsic!');
+      swal("New song added to Moodsic!");
       form.reset();
     } catch (err) {
       console.log(err);
@@ -31,7 +31,16 @@ const SongForm = () => {
 
   return (
     <Container className="form-container">
-      <Form onSubmit={submitForm} border="primary" style={{ width: '25rem' }}>
+      <Form
+        onSubmit={submitForm}
+        border="primary"
+        style={{
+          width: "25rem",
+          height: "55%",
+          border: "1px solid white",
+          padding: "2rem",
+        }}
+      >
         <Form.Group>
           <Form.Label>Title</Form.Label>
           <Form.Control
@@ -70,7 +79,7 @@ const SongForm = () => {
             onChange={handleChange}
           />
         </Form.Group>
-        <Form.Group>
+        <Form.Group className="d-flex justify-content-center">
           <Button type="submit">Submit</Button>
         </Form.Group>
       </Form>
