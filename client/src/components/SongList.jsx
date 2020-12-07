@@ -33,6 +33,7 @@ const SongList = () => {
               <Card.Title>{song.title}</Card.Title>
               <Card.Text>{song.artist}</Card.Text>
               <iframe
+                title={song.title}
                 width="460"
                 height="270"
                 src={song.youtubeUrl}
