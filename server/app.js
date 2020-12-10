@@ -45,9 +45,8 @@ if (process.env.NODE_ENV === 'production') {
     );
   });
 }
-
-module.exports = app;
-
 //  give our app access to our song
 // and playlist routes with the
 // .use middleware function.
+
+module.exports = app;

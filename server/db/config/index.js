@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-require('dotenv').config();
 
 const URI = process.env.ATLAS_URI;
 
@@ -8,7 +7,8 @@ const URI = process.env.ATLAS_URI;
 mongoose.connect(URI, {
   useNewUrlParser: true,
   useCreateIndex: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 });
 
 // accesses the .connection method within the Mongoose library to
