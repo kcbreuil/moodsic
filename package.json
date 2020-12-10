@@ -1,7 +1,7 @@
 {
   "name": "moodsic",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "author": "Katie Breuil",
   "license": "MIT",
   "dependencies": {
@@ -18,7 +18,8 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd client && yarn run start",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\""
+    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
+    "heroku-postbuild": "cd client && yarn && yarn run build"
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
