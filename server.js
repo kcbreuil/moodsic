@@ -3,7 +3,7 @@ require('dotenv').config();
 // Imports the dotenv package into your file and gives you access
 // to credentials stored in variables in your .env file
 
-const app = require('./server/app');
+const app = require('./server/app.js');
 // Declares a variable called app that imports the contents of
 // your app.js file in your server directory
 
