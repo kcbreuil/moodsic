@@ -18,14 +18,13 @@
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "cd client && yarn run start",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "cd client && yarn && yarn run build"
+    "dev": "concurrently \"yarn run server\" \"yarn run client\""
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
     "nodemon": "^2.0.6"
   },
   "engines": {
-    "node": "10.0"
+    "node": ">= 14.0.0"
   }
 }
