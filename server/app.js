@@ -28,8 +28,23 @@ app.use(express.json());
 // This will give us access to all of the functions
 // and methods that are built into the Express library,
 // so long as they are prefaced with our app variable
+
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.resolve(__dirname, '..', 'client', 'build')));
+}
+
 app.use('/api/songs', songRouter);
 app.use('/api/users', userRouter);
+
+if (process.env.NODE_ENV === 'production') {
+  // Handle React routing, return all requests to React app
+  app.get('*', (request, response) => {
+    response.sendFile(
+      path.resolve(__dirname, '..', 'client', 'build', 'index.html')
+    );
+  });
+}
 
 module.exports = app;
 
