@@ -2,7 +2,9 @@ require('./db/config');
 // Loads our database connection
 
 const express = require('express'),
-  morgan = require('morgan');
+  morgan = require('morgan'),
+  path = require('path');
+
 // Declares variables that import the Express
 // and Morgan libraries so that we can work with them
 
